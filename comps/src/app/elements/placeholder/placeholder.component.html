@@ -1,0 +1,10 @@
+<div class="ui placeholder">
+    <!-- if the parent component passes down false for header remove this div block  -->
+    <div *ngIf="header" class="image header">
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="paragraph">
+      <div *appTimes="lines" class="line"></div>
+    </div>
+  </div>

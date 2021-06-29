@@ -1,6 +1,16 @@
-<app-elements-home></app-elements-home>
-<app-collections-home></app-collections-home>
+<div class="ui container">
+    <div class="ui secondary pointing menu">
+         <!-- routerLink instead of href prevents a total page refresh 
+            no network call to server with routerLink attr - only url in browser will change -->
+        <a routerLink="/" routerLinkActive="active" class="item">Home</a>
+        <a routerLink="/elements" routerLinkActive="active" class="item">Elements</a>
+        <a routerLink="/collections" routerLinkActive="active" class="item">Collections</a>
+    </div>
+</div>
+
+<div class="ui segment container">
+    <!-- router  -->
+    <router-outlet></router-outlet>
+</div>
 
 
-<!-- router  -->
-<router-outlet></router-outlet>
