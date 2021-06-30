@@ -1,4 +1,24 @@
 <!-- h1/divider widget in shared module/widgets  -->
-<app-divider></app-divider>
+<app-divider>Placeholder Component</app-divider>
 <!-- //header is true by default lines are 3 by default -->
 <app-placeholder [header]="true" [lines]="7"></app-placeholder>
+
+<app-divider>Segment Component</app-divider>
+<app-segment>
+    <header>
+        <i class="pdf file outline icon"></i>
+        No documents are listed for this customer.
+    </header>
+
+    <button class="ui primary button">Add Document</button>
+</app-segment>
+<app-segment>
+    <!-- using :empty pseudo in segment comp css file on this div will remove it from
+    html file when there is no content for this  -->
+    <!-- <header>
+        <i class="add icon"></i>
+        Add a resource.
+    </header> -->
+
+    <button class="ui primary button">Click to Add</button>
+</app-segment>
