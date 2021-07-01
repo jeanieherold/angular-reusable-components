@@ -1,5 +1,13 @@
 <app-divider>Table Component</app-divider>
 <app-table [data]="data" [headers]="headers" classNames="striped celled"></app-table>
 
-<app-divider>Tabs Component</app-divider>
-<router-outlet></router-outlet>
+<app-divider>Tab Menu</app-divider>
+<app-tabs>
+  <!-- keeping in an example of property binding syntax for example on biography that might be see sometimes  -->
+  <a class="item" [routerLink]="['./']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true }">Biography</a>
+  <a class="item" routerLink="./companies" routerLinkActive="active">Companies</a>
+  <a class="item" routerLink="./partners" routerLinkActive="active">Partners</a>
+</app-tabs>
+
+<!-- this is the way to create space in semantic ui - no margin classes built in  -->
+<div class="ui hidden section divider"></div>
