@@ -1,2 +1,11 @@
 <app-divider>Modals Component</app-divider>
-<app-modal></app-modal>
+<button (click)="toggleModal()">Show Modal</button>
+<!-- close is the event we created from the modal child comp as an eventEmitter  -->
+<!-- when modshome (parent) hears that event fire we want to toggle the modal visibility  -->
+<app-modal *ngIf="modalOpen" (close)="toggleModal()">
+    <ng-container modalTitle>I am a customized Title</ng-container>
+    <p>I am a reusable Modal window!</p>
+    <ng-container modalFooter>
+        <button (click)="toggleModal()" class="ui button">Customizable Close</button>
+    </ng-container>
+</app-modal>

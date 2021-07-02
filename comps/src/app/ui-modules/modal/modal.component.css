@@ -1,0 +1,19 @@
+/* here this looks for any divs with class actions that has NO child elements  */
+/* this targets the case where a dev does not pass in a custom footer  */
+.actions:empty {
+    display: none;
+}
+
+/* NOTE - for the following to work properly the actions-default div MUST come after the actions div  */
+/* targeting the default button in the modal to hide when custom action btn provided by dev in modsHome(parent)  */
+/* First hide default actions div  */
+.actions-default {
+    display: none;
+}
+
+/* Second - then look for .actions:empty AND (+) find a sibling element
+    right AFTER it with class .actions-default 
+    if that is found then put display block on the found sibling */
+.actions:empty + .actions-default {
+    display: block;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -6,6 +6,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
+  @Output() close = new EventEmitter();
 
   constructor(private el: ElementRef) {
     console.log(this.el.nativeElement);
@@ -17,6 +18,12 @@ export class ModalComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.el.nativeElement.remove();
+  }
+
+  //emit some event that will be listened to by the parent component (mods home)
+  //need the Output and EventEmitter in the imports in this file above for this to work
+  onCloseClick() {
+    this.close.emit();
   }
 
 }

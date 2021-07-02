@@ -1,5 +1,7 @@
 <div class="ui placeholder segment">
     <div class="ui icon header">
+      <!-- since "header" below is not in [] it will be looking for <header></header> element in the parent  -->
+      <!-- if header was in [] like [hedaer] it would be looking for an attribute in the parent template  -->
       <ng-content select="header"></ng-content>
     </div>
     <ng-content></ng-content>
